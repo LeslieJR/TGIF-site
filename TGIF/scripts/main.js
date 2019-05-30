@@ -40,25 +40,3 @@ function fillUpTable(arrayMembers) {
 }
 
 fillUpTable(members);
-
-//   for (var j = 0; j < ; j++) {
-//     // Create a <td> element and a text node, make the text
-//     // node the contents of the <td>, and put the <td> at
-//     // the end of the table row
-//     var cell = document.createElement("td");
-//     row.appendChild(cell);
-//   }
-
-//  add the row to the end of the table body
-//   tblBody.appendChild(row);
-// put the <tbody> in the <table>
-// tbl.appendChild(tblBody);
-// // appends <table> into <body>
-// body.appendChild(tbl);
-// // sets the border attribute of tbl to 2;
-// tbl.setAttribute("border", "2");
-// }
-
-// table.appendChild(tblBody);
-
-// var row = document.createElement("tr");

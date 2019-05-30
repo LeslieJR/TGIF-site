@@ -1,40 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head> </head>
 
-  <body>
-    <nav>
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+</head>
+
+<body>
+  <div class="mx-auto" style="width: 1500px;">
+
+    <header>
       <div>
         <div>
-          <a href="#">TGIF</a>
+          <a class="navbar-brand navbar-light bg-light" href="#">TGIF</a>
         </div>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li>
-            <a href="#">Congress 113</a>
-            <ul>
-              <li><a href="#">Senate</a></li>
-              <li><a href="#">House</a></li>
-            </ul>
+        <ul class="nav nav-tabs navbar-expand-lg navbar-light bg-light">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+              aria-expanded="false">Congress 113</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Senate</a>
+              <a class="dropdown-item" href="#">House</a>
+
+            </div>
           </li>
         </ul>
       </div>
-    </nav>
-
-    <header>
-      <div></div>
     </header>
-    <!--Table container-->
-    <table>
-      <thead>
-        <th>Name</th>
-        <th>Party</th>
-        <th>State</th>
-        <th>Years in Office</th>
-        <th>%Votes w/Party</th>
-      </thead>
-      <tbody id="senate-data"></tbody>
-    </table>
+
     <div>
       <h2>Senators</h2>
       <p>
@@ -49,78 +45,55 @@
         uniformed officers, as well as trial of federal officials impeached by
         the House.
       </p>
-      <table>
+    </div>
+    <!-- Default inline 1-->
+    <div>
+
+      <div class="d-flex flex-row">
+        <p>Filter by:</p>
+        <div class="custom-control custom-checkbox custom-control-inline">
+          <input type="checkbox" class="custom-control-input" id="defaultInline1">
+          <label class="custom-control-label" for="defaultInline1">Republican</label>
+        </div>
+
+        <!-- Default inline 2-->
+        <div class="custom-control custom-checkbox custom-control-inline">
+          <input type="checkbox" class="custom-control-input" id="defaultInline2">
+          <label class="custom-control-label" for="defaultInline2">Democrat</label>
+        </div>
+
+        <!-- Default inline 3-->
+        <div class="custom-control custom-checkbox custom-control-inline">
+          <input type="checkbox" class="custom-control-input" id="defaultInline3">
+          <label class="custom-control-label" for="defaultInline3">Independent</label>
+        </div>
+      </div>
+      <table class="mx-auto table-bordered table-striped" style="width: 800px; margin-top: 3rem">
         <thead>
           <tr>
-            <th>Members</th>
-            <th>First name</th>
-            <th>Middle name</th>
-            <th>Last name</th>
+            <th>Name</th>
             <th>Party</th>
-            <th>Total votes</th>
+            <th>State</th>
+            <th>Years in Office</th>
+            <th>%Votes w/Party</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>Lamar</td>
-            <td></td>
-            <td>Alexander</td>
-            <td>R</td>
-            <td>657</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Kelly</td>
-            <td>null</td>
-            <td>Ayotte</td>
-            <td>R</td>
-            <td>657</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Roy</td>
-            <td></td>
-            <td>Blunt</td>
-            <td>R</td>
-            <td>657</td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>Barbara</td>
-            <td>null</td>
-            <td>Boxer</td>
-            <td>D</td>
-            <td>657</td>
-          </tr>
-          <tr>
-            <td>5</td>
-            <td>Sherrod</td>
-            <td></td>
-            <td>Brown</td>
-            <td>D</td>
-            <td>657</td>
-          </tr>
-          <tr>
-            <td>6</td>
-            <td>Richard</td>
-            <td>M.</td>
-            <td>Burr</td>
-            <td>R</td>
-            <td>657</td>
-          </tr>
-          <tr>
-            <td>7</td>
-            <td>Tammy</td>
-            <td>null</td>
-            <td>Baldwin</td>
-            <td>D</td>
-            <td>657</td>
-          </tr>
-        </tbody>
+        <tbody id="senate-data"></tbody>
       </table>
     </div>
-    <script src="scripts/pro-Congress-113-senate.js"></script>
-    <script src="scripts/main.js"></script>
-  </body>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+  </script>
+  <script src="scripts/pro-Congress-113-senate.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+
 </html>
