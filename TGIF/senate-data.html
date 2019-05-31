@@ -2,38 +2,53 @@
 <html lang="en">
 
 <head>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-</head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Senate</title>
+
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+  </head>
 
 <body>
-  <div class="mx-auto" style="width: 1500px;">
+  <div class="mx-auto" style="width: 1500px">
 
     <header>
       <div>
-        <div>
-          <a class="navbar-brand navbar-light bg-light" href="#">TGIF</a>
-        </div>
-        <ul class="nav nav-tabs navbar-expand-lg navbar-light bg-light">
-          <li class="nav-item">
-            <a class="nav-link active" href="#">Home</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-              aria-expanded="false">Congress 113</a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Senate</a>
-              <a class="dropdown-item" href="#">House</a>
+        <div class="d-flex justify-content-between">
+          <div>
+            <img class=" pb-4" src="images/logo.png">
+          </div>
+          <div class="d-flex align-items-end">
+            <img src="/images/email.png" alt="envelope">
+            <a href="mailto:info@tgif.net">info@tgif.net</a>
 
-            </div>
-          </li>
-        </ul>
+          </div>
+        </div>
+        <div>
+          <ul class="nav nav-tabs navbar-expand-lg navbar-light bg-light">
+            <li class="nav-item">
+              <a class="nav-link active" href="homepage.html">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                aria-expanded="false">Congress 113</a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Senate</a>
+                <a class="dropdown-item" href="house-data.html">House</a>
+
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
     </header>
 
     <div>
       <h2>Senators</h2>
-      <p>
+      <p style="text-indent: 50px; width: 55%;">
         First convened in 1789, the composition and powers of the Senate are
         established in Article One of the U.S. Constitution. Each state is
         represented by two senators, regardless of population, who serve
@@ -46,54 +61,70 @@
         the House.
       </p>
     </div>
-    <!-- Default inline 1-->
-    <div>
+
+    <div class="d-flex justify-content-between align-items-center">
 
       <div class="d-flex flex-row">
-        <p>Filter by:</p>
+        <div class="mr-2">Filter by Party: </div>
         <div class="custom-control custom-checkbox custom-control-inline">
           <input type="checkbox" class="custom-control-input" id="defaultInline1">
           <label class="custom-control-label" for="defaultInline1">Republican</label>
         </div>
-
-        <!-- Default inline 2-->
         <div class="custom-control custom-checkbox custom-control-inline">
           <input type="checkbox" class="custom-control-input" id="defaultInline2">
           <label class="custom-control-label" for="defaultInline2">Democrat</label>
         </div>
-
-        <!-- Default inline 3-->
         <div class="custom-control custom-checkbox custom-control-inline">
           <input type="checkbox" class="custom-control-input" id="defaultInline3">
           <label class="custom-control-label" for="defaultInline3">Independent</label>
         </div>
       </div>
-      <table class="mx-auto table-bordered table-striped" style="width: 800px; margin-top: 3rem">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Party</th>
-            <th>State</th>
-            <th>Years in Office</th>
-            <th>%Votes w/Party</th>
-          </tr>
-        </thead>
-        <tbody id="senate-data"></tbody>
-      </table>
+      <div class="d-flex flex-row align-items-center">
+        <div class="mr-2">Filter by State: </div>
+        <button class="btn pl-sm-4 border btn-sm dropdown-toggle" type="button" id="dropdownMenuButton"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          All
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </div>
     </div>
-  </div>
 
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-  </script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-  </script>
-  <script src="scripts/pro-Congress-113-senate.js"></script>
-  <script src="scripts/main.js"></script>
+    <table class="table table-striped" style="margin-top: 1rem">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Party</th>
+          <th>State</th>
+          <th>Years in Office</th>
+          <th>%Votes w/Party</th>
+        </tr>
+      </thead>
+      <tbody id="data"></tbody>
+    </table>
+    <!-- Footer -->
+    <footer class="bg-light page-footer font-small ">
+      <!-- Copyright -->
+      <div class="footer-copyright text-center py-3">© 2019 TGIF | All rights reserved
+      </div>
+      <!-- Copyright -->
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+    <script src="scripts/pro-Congress-113-senate.js"></script>
+    <script src="scripts/main.js"></script>
 </body>
 
 </html>
