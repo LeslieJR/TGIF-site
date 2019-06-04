@@ -30,39 +30,32 @@ function getArray(anArray, letter) {
 }
 
 
-
-
-
 const statistics = {
     democrats: {
-        name: "democrats",
+        name: "Democrats",
         number: countMembers(members, "D"),
-        average: getArray(members, "D")
+        average: (getArray(members, "D")).toFixed(2)
     },
     republicans: {
-        name: "republicans",
+        name: "Republicans",
         number: countMembers(members, "R"),
-        average: getArray(members, "R")
+        average: (getArray(members, "R")).toFixed(2)
     },
     independents: {
-        name: "independents",
+        name: "Independents",
         number: countMembers(members, "I"),
-        average: getArray(members, "I")
+        average: (getArray(members, "I")).toFixed(2)
     },
+
     totals: {
-        name: "total",
-        number: (countMembers(members, "D") + (countMembers(members, "R") + (countMembers(members, "I")))),
-        average: (getArray(members, "D") + getArray(members, "R") + getArray(members, "I")) / 3
+        name: "Total",
+        number: 0,
+        average: 0
     }
 };
 
-
-console.log(statistics.totals.average);
-
-
-
-
-
+statistics.totals.number = statistics.democrats.number + statistics.republicans.number + statistics.independents.number;
+statistics.totals.average = ((Number(statistics.democrats.average) + Number(statistics.independents.average) + Number(statistics.republicans.average)) / 3).toFixed(2);
 
 
 function showDataGlance(object, tbodyid) {
@@ -76,7 +69,6 @@ function showDataGlance(object, tbodyid) {
         cell1.append(element1);
 
         var cell2 = row.insertCell(1);
-
         var element2 = document.createElement("td");
         element2.innerHTML = (object[key].number)
         cell2.append(element2);
@@ -88,5 +80,6 @@ function showDataGlance(object, tbodyid) {
 
     }
 }
+
 
 showDataGlance(statistics, "table-glance");

@@ -59,63 +59,88 @@
         </header>
         <!--Table container-->
         <div>
-            <h2>Attendance</h2>
-            <p>The Constitution specifies that a majority of members constitutes a quorum to do business in each house.
-                Representatives and senators rarely force the presence of a quorum by demanding quorum calls; thus, in
-                most
-                cases, debates continue even if a majority is not present.</p>
+            <div class="d-flex justify-content-between mt-3 mb-5">
+                <div class="d-flex flex-column w-50">
+                    <h2>Attendance</h2>
+                    <p class="">The Constitution specifies that a majority of members constitutes a quorum to do
+                        business in each
+                        house.
+                        Representatives and senators rarely force the presence of a quorum by demanding quorum calls;
+                        thus,
+                        in
+                        most
+                        cases, debates continue even if a majority is not present.</p>
 
-            <p>The Senate uses roll-call votes; a clerk calls out the names of all the senators, each senator stating
-                "aye"
-                or "no" when his or her name is announced. The House reserves roll-call votes for the most formal
-                matters,
-                as a roll-call of all 435 representatives takes quite some time; normally, members vote by electronic
-                device. In the case of a tie, the motion in question fails. In the Senate, the Vice President may (if
-                present) cast the tiebreaking vote.</p>
+                    <p>The Senate uses roll-call votes; a clerk calls out the names of all the senators, each senator
+                        stating
+                        "aye"
+                        or "no" when his or her name is announced. The House reserves roll-call votes for the most
+                        formal
+                        matters,
+                        as a roll-call of all 435 representatives takes quite some time; normally, members vote by
+                        electronic
+                        device. In the case of a tie, the motion in question fails. In the Senate, the Vice President
+                        may
+                        (if
+                        present) cast the tiebreaking vote.</p>
+                </div>
 
-            <h2>House at a glance</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Party</th>
-                        <th>Number of Reps</th>
-                        <th>% Voted with Prty</th>
-                    </tr>
-                </thead>
-                <tbody id="table-glance">
+                <div>
+                    <h2>House at a glance</h2>
+                    <table class="table table-borderless">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>Party</th>
+                                <th>Number of Reps</th>
+                                <th>% Voted with Prty</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-glance">
 
-                </tbody>
-            </table>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
 
-            <h2>Least Engaged (Bottom 10% Attendance)</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Number of Missed Votes</th>
-                        <th>% Missed</th>
-                    </tr>
-                </thead>
-                <tbody id="house-missed">
+            <div class="d-flex justify-content-between mb-3">
+                <div>
+                    <h2>Least Engaged (Bottom 10% Attendance)</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Number of Missed Votes</th>
+                                <th>% Missed</th>
+                            </tr>
+                        </thead>
+                        <tbody id="least-engaged">
 
-                </tbody>
-            </table>
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+                    <h2>Most Engaged (Top 10% Attendance)</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Number of Missed Votes</th>
+                                <th>% Missed</th>
+                            </tr>
+                        </thead>
+                        <tbody id="most-engaged">
 
-            <h2>Most Engaged (Top 10% Attendance)</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Number of Missed Votes</th>
-                        <th>% Missed</th>
-                    </tr>
-                </thead>
-                <tbody id="house-engaged">
-
-                </tbody>
-            </table>
-
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
+        <footer class="bg-light page-footer font-small ">
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">© 2019 TGIF | All rights reserved
+            </div>
+            <!-- Copyright -->
+        </footer>
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
