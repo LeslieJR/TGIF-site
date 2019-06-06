@@ -8,7 +8,7 @@ function fillUpTable(arrayMembers) {
     var tr = document.createElement("tr");
 
     var firstName = arrayMembers[i].first_name;
-    var middleName = arrayMembers[i].middle_name; //typeof number ??
+    var middleName = arrayMembers[i].middle_name;
     var lastName = arrayMembers[i].last_name;
 
     var politicParty = arrayMembers[i].party;
