@@ -80,35 +80,35 @@
       </p>
     </div>
 
-    <div class="d-flex justify-content-between align-items-center">
+    <div class="filter d-flex justify-content-between align-items-center">
+
+      <!-- Filter By Party -->
 
       <div class="d-flex flex-row">
-        <div class="mr-2">Filter by Party: </div>
-        <div class="custom-control custom-checkbox custom-control-inline">
-          <input type="checkbox" class="custom-control-input" id="defaultInline1">
+        <div class=" mr-2">Filter by Party: </div>
+        <div class=" custom-control custom-checkbox custom-control-inline">
+          <input type="checkbox" class="custom-control-input" id="defaultInline1" value="R">
           <label class="custom-control-label" for="defaultInline1">Republican</label>
         </div>
         <div class="custom-control custom-checkbox custom-control-inline">
-          <input type="checkbox" class="custom-control-input" id="defaultInline2">
+          <input type="checkbox" class="custom-control-input" id="defaultInline2" value="D">
           <label class="custom-control-label" for="defaultInline2">Democrat</label>
         </div>
         <div class="custom-control custom-checkbox custom-control-inline">
-          <input type="checkbox" class="custom-control-input" id="defaultInline3">
+          <input type="checkbox" class="custom-control-input" id="defaultInline3" value="I">
           <label class="custom-control-label" for="defaultInline3">Independent</label>
         </div>
       </div>
-      <div class="d-flex flex-row align-items-center">
-        <div class="mr-2">Filter by State: </div>
-        <button class="btn pl-sm-4 border btn-sm dropdown-toggle" type="button" id="dropdownMenuButton"
-          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          All
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
+
+      <!-- Filter By State -->
+
+
+      <div class="d-flex flex-box">
+        <label for="sel1" style="width: 200px;">Filter by state:</label>
+        <select class="form-control" id="sel1">
+        </select>
       </div>
+
     </div>
 
     <table class="table table-striped" style="margin-top: 1rem">

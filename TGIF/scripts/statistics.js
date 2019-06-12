@@ -72,10 +72,13 @@ statistics.independents.average = getArray(members, "I")
 
 statistics.totals.number = statistics.democrats.number + statistics.republicans.number + statistics.independents.number;
 
-//Is that calculation right?  
 
+var totalPercent = 0;
+for (var i = 0; i < members.length; i++) {
+    totalPercent += members[i].votes_with_party_pct;
+}
+statistics.totals.average = totalPercent / members.length;
 
-statistics.totals.average = ((statistics.democrats.average) + (statistics.republicans.average) + (statistics.independents.average)) / 3;
 
 
 
@@ -179,12 +182,5 @@ function printTables(membersArray, tbodyId, criteria1, criteria2) {
     }
 }
 
-
-
 createMemberArray(members, "missed_votes_pct");
-
-
-
-
 createMemberArray(members, "votes_with_party_pct");
-//createMemberArray(members, "missed_votes_pct")
