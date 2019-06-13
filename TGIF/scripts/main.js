@@ -1,6 +1,8 @@
 var members = data.results[0].members;
 //the table is already created in the HTML file also the thead and the tboy, that last with the id="senate-data"
 
+fillUpTable(members);
+createArrayStates(members);
 
 function fillUpTable(arrayMembers) {
   var tbody = document.getElementById("data");
@@ -45,27 +47,54 @@ function fillUpTable(arrayMembers) {
   }
 }
 
-fillUpTable(members);
+//we create a function called createArrayStates to print the options in the droplist (Select)
+function createArrayStates(array) {
+  var arrayState = []
+  for (var i = 0; i < array.length; i++) {
+    arrayState.push(array[i].state)
+  }
+
+  // after that we declare a new var in this case a set with the states (doing this we avoid repetitions) 
+  var set = new Set(arrayState);
+  var arrayOnlyStates = Array.from(set);
+
+  //and then we sort that array alphabetically.
+  arrayOnlyStates.sort()
+
+  //we need to add the first option ('All' to display all the data):
+  arrayOnlyStates.unshift('All');
+
+  //we create a variable called droplist and it is going to be the selected element by id
+  var droplist = document.getElementById('sel1');
+
+  // here we use the .forEach to add new Options to the Select that has the state's name and also a value with the name of the state
+  arrayOnlyStates.forEach(function (element, key) {
+    droplist[key] = new Option(element, element);
+  });
+}
 
 
-//here we add the eventListener to the checkboxes, so when it is clicked, a function is called (in this case, the function is called "createArrayParty")
+//here we add the eventListener to the checkboxes, so when it is clicked, a function is called (in this case, the function is called "filterByParty")
 document.querySelector('#defaultInline1').addEventListener('click', function () {
-  createArrayParty(members)
+  filterByParty(members)
 });
 document.querySelector('#defaultInline2').addEventListener('click', function () {
-  createArrayParty(members)
+  filterByParty(members)
 });
 document.querySelector('#defaultInline3').addEventListener('click', function () {
-  createArrayParty(members)
+  filterByParty(members)
 });
+//adding an eventlistener to the parent element (in this case the Select)
+document.querySelector('#sel1').addEventListener('change', function () {
+  filterByParty(members)
+})
 
 
-//here we create the function createArrayParty that first get the values of the checkboxes that are checked and then put them into an empty array. Then if the array created has a lenght different to 0 it goes to a different loop to compare the values of the array and the value of the members party.
-function createArrayParty(members) {
+//here we create the function filterByParty 
+function filterByParty(members) {
   var inputs = document.getElementsByTagName("input");
-
   var arrChecked = [];
-
+  var partyArrayChecked = [];
   for (var i = 0; i < inputs.length; i++) {
     if (inputs[i].type === "checkbox" && inputs[i].checked) {
       arrChecked.push(inputs[i].defaultValue)
@@ -79,37 +108,24 @@ function createArrayParty(members) {
         }
       }
     }
-    fillUpTable(partyArrayChecked);
+    filterByState(partyArrayChecked);
   } else {
-    fillUpTable(members);
+    filterByState(members);
   }
 }
 
-
-function arrayStates(array) {
-  var arrayState = []
-  for (var i = 0; i < array.length; i++) {
-    arrayState.push(array[i].state)
-  }
-
-  var set = new Set(arrayState);
-  var arrayOnlyStates = Array.from(set);
-  arrayOnlyStates.sort()
-
-  console.log(arrayOnlyStates);
-
+//here we create the function filterByState
+function filterByState(members) {
   var droplist = document.getElementById('sel1');
-
-  for (state in arrayOnlyStates) {
-    droplist.add(new Option(arrayOnlyStates[state]));
-  };
+  if (droplist.value === 'All') {
+    fillUpTable(members);
+  } else {
+    var stateChecked = [];
+    for (var k = 0; k < members.length; k++) {
+      if (members[k].state === droplist.value) {
+        stateChecked.push(members[k]);
+      }
+    }
+    fillUpTable(stateChecked);
+  }
 }
-arrayStates(members)
-// function filterBystate(anArray, state) {
-//   var membersState = anArray.filter(
-//     function (anArray) {
-//       return anArray.state === state;
-//     }
-//   )
-//   console.log(membersState);
-// }
