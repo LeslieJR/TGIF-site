@@ -10,16 +10,20 @@
   <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Cabin+Condensed:500&display=swap" rel="stylesheet">
+
   </head>
 
 <body>
-  <div class="mx-auto" style="width: 1500px">
+  <div id="loader"></div>
+  <div class="mx-auto" id="pageContent">
 
     <header>
       <div>
         <div class="d-flex justify-content-between">
           <div>
-            <img class=" pb-4" src="images/logo.png">
+            <img class=" pb-4" src="images/tgif.png">
           </div>
           <div class="d-flex align-items-end">
             <img src="/images/email.png" alt="envelope">
@@ -27,8 +31,8 @@
 
           </div>
         </div>
-        <div>
-          <ul class="nav nav-tabs navbar-expand-lg navbar-light bg-light">
+        <div class="sticky">
+          <ul class="nav nav-tabs ">
             <li class="nav-item">
               <a class="nav-link" href="homepage.html">Home</a>
             </li>
@@ -64,9 +68,10 @@
       </div>
     </header>
 
-    <div>
-      <h2 class="mt-3">Senators</h2>
-      <p style="text-indent: 50px; width: 55%;">
+    <div class="container">
+
+      <h2>Senators</h2>
+      <p>
         First convened in 1789, the composition and powers of the Senate are
         established in Article One of the U.S. Constitution. Each state is
         represented by two senators, regardless of population, who serve
@@ -104,14 +109,15 @@
 
 
       <div class="d-flex flex-box">
-        <label for="sel1" style="width: 200px;">Filter by state:</label>
+        <label for="sel1">Filter by state:</label>
         <select class="form-control" id="sel1">
         </select>
       </div>
 
     </div>
 
-    <table class="table table-striped" style="margin-top: 1rem">
+    <table class="table table-hover">
+      <!-- margin-top 1rem -->
       <thead>
         <tr>
           <th>Name</th>
@@ -124,7 +130,7 @@
       <tbody id="data"></tbody>
     </table>
     <!-- Footer -->
-    <footer class="bg-light page-footer font-small ">
+    <footer class="page-footer font-small ">
       <!-- Copyright -->
       <div class="footer-copyright text-center py-3">© 2019 TGIF | All rights reserved
       </div>
@@ -134,14 +140,14 @@
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-    </script>
+      </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
       integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-    </script>
+      </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-    </script>
-    <script src="scripts/pro-Congress-113-senate.js"></script>
+      </script>
+
     <script src="scripts/main.js"></script>
 </body>
 

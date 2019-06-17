@@ -4,14 +4,19 @@
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Cabin+Condensed:500&display=swap" rel="stylesheet">
+    <title>Senate-party-loyalty</title>
+
 </head>
 
 <body>
-    <div class="mx-auto" style="width: 1400px;">
+    <div id="loader"></div>
+    <div class="mx-auto" id="pageContent">
         <header>
             <div class="d-flex justify-content-between">
                 <div>
-                    <img class=" pb-4" src="images/logo.png">
+                    <img class=" pb-4" src="images/tgif.png">
                 </div>
                 <div class="d-flex align-items-end">
                     <img src="/images/email.png" alt="envelope">
@@ -20,7 +25,7 @@
                 </div>
             </div>
             <div>
-                <ul class="nav nav-tabs navbar-expand-lg navbar-light bg-light">
+                <ul class="nav nav-tabs">
                     <li class="nav-item">
                         <a class="nav-link" href="homepage.html">Home</a>
                     </li>
@@ -42,7 +47,7 @@
                         </div>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="" role="button"
+                        <a class="nav-link active dropdown-toggle" data-toggle="dropdown" href="" role="button"
                             aria-haspopup="true" aria-expanded="false">Party Loyalty</a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="#">Senate</a>
@@ -59,8 +64,8 @@
         </header>
 
         <!--Table container-->
-        <div>
-            <div class="d-flex justify-content-between mt-3 mb-5">
+        <div class="container">
+            <div class="d-flex justify-content-between">
                 <div class="d-flex flex-column w-50">
                     <h2>Party Loyalty</h2>
                     <p>Those who consider themselves to be strong partisans, strong Democrats and strong Republicans
@@ -121,7 +126,7 @@
             </div>
 
         </div>
-        <footer class="bg-light page-footer font-small ">
+        <footer class=" page-footer font-small ">
             <!-- Copyright -->
             <div class="footer-copyright text-center py-3">© 2019 TGIF | All rights reserved
             </div>
@@ -130,14 +135,14 @@
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-    </script>
-    <script src="scripts/pro-Congress-113-senate.js"></script>
+        </script>
+
     <script src="scripts/statistics.js"></script>
 </body>
 

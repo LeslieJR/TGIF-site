@@ -4,18 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home</title>
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Cabin+Condensed:500&display=swap" rel="stylesheet">
+    <title>Home</title>
 </head>
 
 <body>
-    <div class="mx-auto" style="width: 1500px">
+    <div id="loader"></div>
+    <div class="mx-auto" id="pageContent">
         <header>
             <div class="d-flex justify-content-between">
                 <div>
-                    <img class=" pb-4" src="images/logo.png">
+                    <img class=" pb-4" src="images/tgif.png">
                 </div>
                 <div class="d-flex align-items-end">
                     <img src="/images/email.png" alt="envelope">
@@ -24,7 +26,7 @@
                 </div>
             </div>
             <div>
-                <ul class="nav nav-tabs navbar-expand-lg navbar-light bg-light">
+                <ul class="nav nav-tabs">
                     <li class="nav-item">
                         <a class="nav-link active" href="#">Home</a>
                     </li>
@@ -61,106 +63,71 @@
 
             </div> -->
         </header>
-        <div class="d-flex flex-direction:column ">
+
+        <div class="container d-flex flex-direction:column ">
             <div>
                 <h2 class="mt-3">About Us</h2>
-                <p style="text-indent: 50px;">Openness, accountability, and honesty define government
-                    transparency.
-                    In a free society, transparency is
-                    government's obligation to share information with citizens. It is at the heart of how citizens hold
-                    their
-                    public officials accountable. Here at TGIF we believe that government should be transparent.<span
-                        id="dots1">...</span></p>
+                <p>Openness, accountability, and honesty define government transparency. In a
+                    free society, transparency is government's obligation to share information with citizens. It is at
+                    the heart of how citizens hold their public officials accountable. Here at TGIF we believe that
+                    government should be transparent.</p>
 
-                <p><span id="more1">Governments exist to serve the people. Information on how officials conduct the
-                        public
-                        business and spend
-                        taxpayer money must be readily available and easily understood. This transparency allows good
-                        and
-                        just
-                        governance. Transparency promotes accountability and provides information for citizens about
-                        what
-                        their
-                        Government is doing.
-                        We also believe that government should be participatory. Public engagement
-                        enhances
-                        the Government's
-                        effectiveness and improves the quality of its decisions. Knowledge is widely dispersed in
-                        society,
-                        and
-                        public officials benefit from having access to that dispersed knowledge. We invite you to use
-                        our
-                        site
-                        to
-                        become actively engaged in American government.
-                        TGIF works to disclose information in forms that the public can readily find and
-                        use.
-                        We solicit public
-                        feedback to identify information of greatest use to the public.</span></p><button
-                    onclick="hideAndShow1()" id="BtnShow1">Read more</button>
+
 
                 <h3 class="mt-3">Background History of Government Transparency</h3>
-                <p style="text-indent: 50px">In the West, the idea that government should be open to public
-                    scrutiny and susceptible to public opinion
-                    dates back at least to the time of the Enlightenment, when many philosophes made an attack on
-                    absolutist
-                    doctrine of state secrecy, a core part of their intellectual project. The passage of formal
-                    legislative
-                    instruments to this end can also be traced to this time with Sweden, for example, (which then
-                    included
-                    Finland as a Swedish-governed territory) enacting free press legislation as part of its
-                    constitution
-                    (Freedom of the Press Act, 1766). This approach, and that of the philosophes more broadly, is
-                    strongly
-                    related to recent historiography on the eighteenth-century public sphere.
-                    <span id="dots2">...</span></p>
 
-                <p> <span id="more2">
-                        Influenced by Enlightenment thought, the revolutions in America (1776) and France (1789),
+                <p>
+                    In the West, the idea that government should be open to public scrutiny and susceptible to public
+                    opinion dates back at least to the time of the Enlightenment, when many philosophes made an attack
+                    on absolutist doctrine of state secrecy, a core part of their
+                    intellectual project. The passage of formal legislative instruments to this end can also be traced
+                    to this time with Sweden, for example, (which then included Finland as a Swedish-governed territory)
+                    enacting free press legislation as part of its constitution (Freedom of the Press Act, 1766). This
+                    approach, and that of the philosophes more broadly, is strongly related to recent historiography on
+                    the eighteenth-century public sphere.</p>
+
+                <div id="text">
+
+                    <p>Influenced by Enlightenment thought, the revolutions in America (1776) and France (1789),
                         freedom of
+                        the press enshrined provisions and requirements for public budgetary accounting and freedom of
                         the
-                        press enshrined provisions and requirements for public budgetary accounting and freedom of
-                        the press
-                        in constitutional articles. In the nineteenth century, attempts by Metternichean statesmen to
-                        row
-                        back
-                        on
-                        these measures were vigorously opposed by a number of eminent liberal politicians and
+                        press in constitutional articles. In the nineteenth century, attempts by Metternichean statesmen
+                        to
+                        row back on these measures were vigorously opposed by a number of eminent
+                        liberal politicians and
                         writers,
                         Bentham,
-                        Mill and Acton prominent among the latter.
+                        Mill and Acton prominent among the latter.</p>
 
-                        Open government is widely seen to be a key hallmark of contemporary
-                        democratic
-                        practice and is often
+                    <p> government is widely seen to be a key hallmark of contemporary
+                        democratic practice and is often
                         linked to the passing of freedom of information legislation. Scandinavian countries claim to
                         have
                         adopted the first freedom of information legislation, dating the origins of its modern
                         provisions to
-                        the
-                        eighteenth century and Finland continuing the presumption of openness after gaining
+                        the eighteenth century and Finland continuing the presumption of openness after gaining
                         independence
                         in
-                        1917, passing its Act on Publicity of Official Documents in 1951 (superseded by new
-                        legislation
+                        1917, passing its Act on Publicity of Official Documents in 1951 (superseded by new legislation
                         in
-                        1999).
+                        1999).</p>
 
-                        The United States passed its Freedom of Information Act (FOIA) in 1966,
-                        FOIAs,
-                        Access to Information
-                        Acts
-                        (AIAs) or equivalent laws were passed in Denmark and Norway in 1970.
-                    </span></p>
+                    <p>The United States passed its Freedom of Information Act (FOIA) in 1966, FOIAs, Access to
+                        Information
+                        Acts (AIAs) or equivalent laws were passed in Denmark and Norway in 1970.</p>
 
-                <button onclick="hideAndShow2()" id="BtnShow2">Read more</button>
+
+
+                </div>
+                <button id="toggle">Read More</button>
             </div>
             <div class="align-self-center ml-5">
-                <img style="width:700px" alt="building-government" src="images/government1.jpg">
+                <img style="width:550px" alt="building-government" src="images/government1.jpg">
             </div>
         </div>
 
-        <footer class="bg-light page-footer font-small ">
+        <footer class="page-footer font-small ">
             <!-- Copyright -->
             <div class="footer-copyright text-center py-3">© 2019 TGIF | All rights reserved
             </div>
@@ -170,47 +137,29 @@
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-    </script>
+        </script>
     <script>
-        function hideAndShow1() {
+        // IN PROCESS...
+        // var buttonRead = document.getElementById('toggle');
+        // var hiddenText = document.getElementById('text');
+        // buttonRead.addEventListener('click', (function () {
+        //     var elem = buttonRead.text();
+        //     if (elem == "Read More") {
 
-            var dots1 = document.getElementById("dots1");
-            var moreText1 = document.getElementById("more1");
-            var btnShow1 = document.getElementById("BtnShow1");
+        //         buttonRead.text("Read Less");
+        //         hiddenText.slideDown();
+        //     } else {
 
-            if (dots1.style.display === "none") {
-                dots1.style.display = "inline";
-                btnShow1.innerHTML = "Read more";
-                moreText1.style.display = "none";
-            } else {
-                dots1.style.display = "none";
-                btnShow1.innerHTML = "Read less";
-                moreText1.style.display = "inline";
-            }
-        }
-
-        function hideAndShow2() {
-            var dots2 = document.getElementById("dots2");
-            var moreText2 = document.getElementById("more2");
-            var btnShow2 = document.getElementById("BtnShow2");
-
-
-            if (dots2.style.display === "none") {
-                dots2.style.display = "inline";
-                btnShow2.innerHTML = "Read more";
-                moreText2.style.display = "none";
-            } else {
-                dots2.style.display = "none";
-                btnShow2.innerHTML = "Read less";
-                moreText2.style.display = "inline";
-            }
-        }
+        //         buttonRead.text("Read More");
+        //         hiddenText.slideUp();
+        //     }
+        // }))
     </script>
 </body>
 
