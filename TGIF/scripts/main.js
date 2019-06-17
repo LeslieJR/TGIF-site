@@ -3,15 +3,14 @@ var members;
 
 
 fetchingSenateHouse();
+
 function fetchingSenateHouse(){
 let link;
-let houseLink="https://api.propublica.org/congress/v1/113/house/members.json"
-let senateLink="https://api.propublica.org/congress/v1/113/senate/members.json"
 
 if (window.location.pathname.includes('senate')){
-    link = senateLink;
+    link = "https://api.propublica.org/congress/v1/113/house/members.json";
 } else if(window.location.pathname.includes('house')){
-    link= houseLink;
+    link= "https://api.propublica.org/congress/v1/113/senate/members.json";
 }
 
 fetch(link, 

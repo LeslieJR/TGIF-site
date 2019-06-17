@@ -27,13 +27,11 @@ fetchingSenateHouse();
 
 function fetchingSenateHouse(){
 let link;
-let houseLink="https://api.propublica.org/congress/v1/113/house/members.json"
-let senateLink="https://api.propublica.org/congress/v1/113/senate/members.json"
 
 if (window.location.pathname.includes('senate')){
-    link = senateLink;
+    link = "https://api.propublica.org/congress/v1/113/senate/members.json";
 } else if(window.location.pathname.includes('house')){
-    link= houseLink;
+    link= "https://api.propublica.org/congress/v1/113/house/members.json";
 }
 
 fetch(link, 
@@ -59,12 +57,10 @@ headers:
       });
     }
 
-    
-
 //here we create an object called statistics, and the sections number and average are equal to 0
 
 
-    function countMembers(arrayMembers, letter) {
+function countMembers(arrayMembers, letter) {
         let numMemberParty = 0;
         for (let i = 0; i < arrayMembers.length; i++) {
             if (arrayMembers[i].party === letter) {
@@ -75,7 +71,7 @@ headers:
     }
     //function called getArray, first we create an empty array that is going to be filled with the members of a party ('R','D','I') and also we create a variable numArray that collects the sum of the votes-with-party of the array previously filled
     
-    function getArray(anArray, letter) {
+function getArray(anArray, letter) {
         let newArray = [];
         for (let i = 0; i < anArray.length; i++) {
             if (members[i].party === letter) {
@@ -122,7 +118,6 @@ statistics.totals.average = totalPercent / members.length;
 }
 
 
-
 function showDataGlance(object, tbodyid) {
     let tbody = document.getElementById(tbodyid);
     for (let key in object) {
@@ -145,8 +140,6 @@ function showDataGlance(object, tbodyid) {
 
     }
 }
-
-
 
 //function to create an array that also is sorted in descending order by a field/criteria, that after its top 10% is cut and also the bottom 10% (when the array is reverse) 
 
