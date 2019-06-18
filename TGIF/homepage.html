@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Cabin+Condensed:500&display=swap" rel="stylesheet">
     <title>Home</title>
+
 </head>
 
 <body>
@@ -75,20 +76,28 @@
 
 
                 <h3 class="mt-3">Background History of Government Transparency</h3>
+                <div>
+                    <p>
+                        In the West, the idea that government should be open to public scrutiny and susceptible to
+                        public
+                        opinion dates back at least to the time of the Enlightenment, when many philosophes made an
+                        attack
+                        on absolutist doctrine of state secrecy, a core part of their
+                        intellectual project. The passage of formal legislative instruments to this end can also be
+                        traced
+                        to this time with Sweden, for example, (which then included Finland as a Swedish-governed
+                        territory)
+                        enacting free press legislation as part of its constitution (Freedom of the Press Act, 1766).
+                        This
+                        approach, and that of the philosophes more broadly, is strongly related to recent historiography
+                        on
+                        the eighteenth-century public sphere.</p>
 
-                <p>
-                    In the West, the idea that government should be open to public scrutiny and susceptible to public
-                    opinion dates back at least to the time of the Enlightenment, when many philosophes made an attack
-                    on absolutist doctrine of state secrecy, a core part of their
-                    intellectual project. The passage of formal legislative instruments to this end can also be traced
-                    to this time with Sweden, for example, (which then included Finland as a Swedish-governed territory)
-                    enacting free press legislation as part of its constitution (Freedom of the Press Act, 1766). This
-                    approach, and that of the philosophes more broadly, is strongly related to recent historiography on
-                    the eighteenth-century public sphere.</p>
 
-                <div id="text">
 
-                    <p>Influenced by Enlightenment thought, the revolutions in America (1776) and France (1789),
+                    <p class="text-hidden hidden">Influenced by Enlightenment thought, the revolutions in America (1776)
+                        and
+                        France (1789),
                         freedom of
                         the press enshrined provisions and requirements for public budgetary accounting and freedom of
                         the
@@ -100,7 +109,7 @@
                         Bentham,
                         Mill and Acton prominent among the latter.</p>
 
-                    <p> government is widely seen to be a key hallmark of contemporary
+                    <p class="text-hidden hidden"> government is widely seen to be a key hallmark of contemporary
                         democratic practice and is often
                         linked to the passing of freedom of information legislation. Scandinavian countries claim to
                         have
@@ -113,14 +122,16 @@
                         in
                         1999).</p>
 
-                    <p>The United States passed its Freedom of Information Act (FOIA) in 1966, FOIAs, Access to
+                    <p class="text-hidden hidden">The United States passed its Freedom of Information Act (FOIA) in
+                        1966,
+                        FOIAs, Access to
                         Information
                         Acts (AIAs) or equivalent laws were passed in Denmark and Norway in 1970.</p>
 
 
-
+                    <button class="toggle-button">Show more</button>
                 </div>
-                <button id="toggle">Read More</button>
+
             </div>
             <div class="align-self-center ml-5">
                 <img style="width:550px" alt="building-government" src="images/government1.jpg">
@@ -144,23 +155,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
         </script>
-    <script>
-        // IN PROCESS...
-        // var buttonRead = document.getElementById('toggle');
-        // var hiddenText = document.getElementById('text');
-        // buttonRead.addEventListener('click', (function () {
-        //     var elem = buttonRead.text();
-        //     if (elem == "Read More") {
-
-        //         buttonRead.text("Read Less");
-        //         hiddenText.slideDown();
-        //     } else {
-
-        //         buttonRead.text("Read More");
-        //         hiddenText.slideUp();
-        //     }
-        // }))
-    </script>
+    <script src="scripts/main.js"></script>
 </body>
 
 </html>

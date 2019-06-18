@@ -1,4 +1,5 @@
 
+toggleButton();
 var members;
 
 
@@ -178,4 +179,19 @@ function filterByState(members) {
     }
       fillUpTable(stateChecked);
   }
+}
+
+
+function toggleButton(){
+  const button = document.querySelector('.toggle-button');
+  const hiddenItems = document.querySelectorAll('.text-hidden');
+  let isHidden = true;
+  button.addEventListener('click', function () {
+      button.textContent = isHidden
+          ? 'Show Less'
+          : 'Show more';
+
+      isHidden = !isHidden;
+      hiddenItems.forEach(item => item.classList.toggle('hidden'));
+  });
 }
