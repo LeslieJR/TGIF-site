@@ -24,6 +24,8 @@ a:hover {
 p{
     text-align: justify;
 }
+
+/*all the p with the class hidden wouldn't show unless the button is pressed */
 .hidden {
   display: none
 }

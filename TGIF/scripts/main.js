@@ -183,14 +183,13 @@ function filterByState(members) {
 
 
 function toggleButton(){
-  const button = document.querySelector('.toggle-button');
-  const hiddenItems = document.querySelectorAll('.text-hidden');
-  let isHidden = true;
+  let button = document.querySelector('.toggle-button');     
+  let hiddenItems = document.querySelectorAll('.text-hidden'); 
+  //in the new variable hiddenItems are kept all the tags p with the class 'text-hidden'
+  let isHidden = false; 
   button.addEventListener('click', function () {
-      button.textContent = isHidden
-          ? 'Show Less'
-          : 'Show more';
-
+  // conditional (ternary) operator (variable=(condition)?value1:value2); If the button.textContent is isHidden(false), the value of the button.textContent will be "Show More", otherwise the value will be "Show Less".
+      button.textContent = isHidden ? 'Show More' : 'Show Less';
       isHidden = !isHidden;
       hiddenItems.forEach(item => item.classList.toggle('hidden'));
   });
