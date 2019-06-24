@@ -43,15 +43,24 @@ const vueApp = new Vue({
 },
    computed:{
     compareData(){
-    let membersFiltered =[];
+    let membersFilteredbyParty =[];  
+    let membersFilteredbyState =[];
     if(this.checkedParty.length!==0){
     for(let i=0;i<this.members.length;i++){
               if(this.checkedParty.includes(this.members[i].party)){
-                  membersFiltered.push(this.members[i]);
+                  membersFilteredbyParty.push(this.members[i]);
               }
             }
-        return membersFiltered.compareStates;//works, in the console it is displayed an array of 2 if I clicked R and D and AR state (one for each state with the same party)
-        } else{
+            return membersFilteredbyParty;}
+
+    if(this.selectedOption.length!==0){
+        for(let i=0;i<membersFilteredbyParty.length;i++){
+                  if(this.selectedOption.includes(membersFilteredbyParty[i].state)){
+                      membersFilteredbyState.push(this.members[i]);
+                  }
+                }
+            return membersFilteredbyState;
+            } else{
             return this.members;
         }   
     },
@@ -66,19 +75,6 @@ const vueApp = new Vue({
         return onlyStates;
        
     },
-    compareStates(){
-        let membersFilteredbyState =[];
-    if(this.selectedOption.length!==0){
-    for(let i=0;i<this.membersFiltered.length;i++){
-              if(this.selectedOption.includes(this.members[i].state)){
-                  membersFilteredbyState.push(this.members[i]);
-              }
-            }
-        return membersFilteredbyState;
-        } else{
-            return this.members;
-        }   
-   }
 }
 })
 
