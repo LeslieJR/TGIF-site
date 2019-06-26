@@ -11,9 +11,9 @@ function fetchingSenateHouse(){
 let link;
 
 if (window.location.pathname.includes('senate')){
-    link = "https://api.propublica.org/congress/v1/113/house/members.json";
+    link = "https://api.propublica.org/congress/v1/113/senate/members.json";
 } else if(window.location.pathname.includes('house')){
-    link= "https://api.propublica.org/congress/v1/113/senate/members.json";
+    link= "https://api.propublica.org/congress/v1/113/house/members.json";
 }
 
 fetch(link, 
@@ -27,9 +27,9 @@ headers:
     throw new Error(response.status);
   }).then(function (json){
      members=json.results[0].members;
-     fillUpTable(members);
-     createArrayStates(members);
      init();
+     createArrayStates(members);
+     filterByParty(members);
      document.getElementById('loader').style.display="none";
      document.getElementById('pageContent').style.display="block";
     }).catch(function(error){
@@ -40,6 +40,7 @@ headers:
 
 
 function fillUpTable(arrayMembers) {
+
   let tbody = document.getElementById("data");
   tbody.innerHTML = '';
   if(arrayMembers.length !==0){
@@ -99,7 +100,7 @@ function fillUpTable(arrayMembers) {
 //we create a function called createArrayStates to print the options in the droplist (Select)
 function createArrayStates(array) {
   let arrayState = []
-  for (let i = 0; i < array.length; i++) {
+  for (let i = 0; i < array.length; i++) {  //podria ser .map
     arrayState.push(array[i].state)
   }
 
@@ -167,16 +168,17 @@ function filterByParty(members) {
 }
 
 //here we create the function filterByState
-function filterByState(members) {
+function filterByState(array) {
+
   let droplist = document.getElementById('sel1');
-  if (droplist.value === 'All' && members.length !==0) {
-    fillUpTable(members);
+  if (droplist.value === 'All' && array.length !== 0) {
+    fillUpTable(array);
   } else {
     let stateChecked = [];
-    for (let k = 0; k < members.length; k++) {
+    for (let k = 0; k < array.length; k++) {
       
-      if (members[k].state === droplist.value) {
-        stateChecked.push(members[k]);
+      if (array[k].state === droplist.value) {
+        stateChecked.push(array[k]);
       }
     }
       fillUpTable(stateChecked);
@@ -188,11 +190,11 @@ function toggleButton(){
   let button = document.querySelector('.toggle-button');     
   let hiddenItems = document.querySelectorAll('.text-hidden'); 
   //in the new variable hiddenItems are kept all the tags p with the class 'text-hidden'
-  let isHidden = false; 
+  let isHidden = true; 
   button.addEventListener('click', function () {
   // conditional (ternary) operator (variable=(condition)?value1:value2); If the button.textContent is isHidden(false), the value of the button.textContent will be "Show More", otherwise the value will be "Show Less".
-      button.textContent = isHidden ? 'Show More' : 'Show Less';
       isHidden = !isHidden;
+      button.textContent = isHidden ? 'Show More' : 'Show Less';
       hiddenItems.forEach(item => item.classList.toggle('hidden'));
   });
 }
