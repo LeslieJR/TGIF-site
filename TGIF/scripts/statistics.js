@@ -25,95 +25,96 @@ const statistics = {
 
 fetchingSenateHouse();
 
-function fetchingSenateHouse(){
-let link;
+function fetchingSenateHouse() {
+    let link;
 
-if (window.location.pathname.includes('senate')){
-    link = "https://api.propublica.org/congress/v1/113/senate/members.json";
-} else if(window.location.pathname.includes('house')){
-    link= "https://api.propublica.org/congress/v1/113/house/members.json";
+    if (window.location.pathname.includes('senate')) {
+        link = "https://api.propublica.org/congress/v1/113/senate/members.json";
+    } else if (window.location.pathname.includes('house')) {
+        link = "https://api.propublica.org/congress/v1/113/house/members.json";
+    }
+
+    fetch(link, {
+        method: "GET",
+        headers: {
+            'X-API-Key': 'wyfRhSLA71qOzm5StT9fMZ4nJE1GxARXIa4gKmSj'
+        }
+    }).then(function (response) {
+        if (response.ok) {
+            return response.json();
+        }
+        throw new Error(response.status);
+    }).then(function (json) {
+        members = json.results[0].members;
+        populateObject(members);
+        showDataGlance(statistics, "table-glance");
+        createMemberArray(members, "missed_votes_pct");
+        createMemberArray(members, "votes_with_party_pct");
+        document.getElementById('loader').style.display = "none";
+        document.getElementById('pageContent').style.display = "block";
+
+    }).catch(function (error) {
+        console.log("Request failed:" + error.message);
+    });
 }
-
-fetch(link, 
-{method:"GET",
-headers:
-{'X-API-Key':'wyfRhSLA71qOzm5StT9fMZ4nJE1GxARXIa4gKmSj'}
-}).then(function(response) {
-    if (response.ok){
-      return response.json();
-    }
-    throw new Error(response.status);
-  }).then(function (json){     
-     members=json.results[0].members;
-     populateObject(members);
-     showDataGlance(statistics, "table-glance");
-     createMemberArray(members, "missed_votes_pct");
-     createMemberArray(members, "votes_with_party_pct");
-     document.getElementById('loader').style.display="none";
-     document.getElementById('pageContent').style.display="block";
-
-    }).catch(function(error){
-      console.log("Request failed:" + error.message);
-      });
-    }
 
 //here we create an object called statistics, and the sections number and average are equal to 0
 
 
 function countMembers(arrayMembers, letter) {
-        let numMemberParty = 0;
-        for (let i = 0; i < arrayMembers.length; i++) {
-            if (arrayMembers[i].party === letter) {
-                numMemberParty++;
-            }
+    let numMemberParty = 0;
+    for (let i = 0; i < arrayMembers.length; i++) {
+        if (arrayMembers[i].party === letter) {
+            numMemberParty++;
         }
-        return (numMemberParty);
     }
-    //function called getArray, first we create an empty array that is going to be filled with the members of a party ('R','D','I') and also we create a variable numArray that collects the sum of the votes-with-party of the array previously filled
-    
-function getArray(anArray, letter) {
-        let newArray = [];
-        for (let i = 0; i < anArray.length; i++) {
-            if (members[i].party === letter) {
-                newArray.push(members[i]);
-            }
-        }
-        let numArray = 0;
-        for (let j = 0; j < newArray.length; j++) {
-            numArray += newArray[j].votes_with_party_pct;
-        }
-        let averageOfVotes = 0;
-    //if the array that contains the members of party is filled (meaning that there are at least one member) we calculate the average of votes.
-        if (newArray.length !== 0) {
-            averageOfVotes = (numArray / newArray.length);
-    
-        } else {
-            averageOfVotes = 0;
-        }
-        return (averageOfVotes);
-    }
-
-
-function populateObject(members){
-//we then update the sections by calling the functions needed.
-
-statistics.democrats.number = countMembers(members, "D")
-statistics.republicans.number = countMembers(members, "R")
-statistics.independents.number = countMembers(members, "I")
-
-statistics.democrats.average = getArray(members, "D")
-statistics.republicans.average = getArray(members, "R")
-statistics.independents.average = getArray(members, "I")
-
-
-statistics.totals.number = statistics.democrats.number + statistics.republicans.number + statistics.independents.number;
-
-
-let totalPercent = 0;
-for (let i = 0; i < members.length; i++) {
-    totalPercent += members[i].votes_with_party_pct;
+    return (numMemberParty);
 }
-statistics.totals.average = totalPercent / members.length;
+//function called getArray, first we create an empty array that is going to be filled with the members of a party ('R','D','I') and also we create a variable numArray that collects the sum of the votes-with-party of the array previously filled
+
+function getArray(anArray, letter) {
+    let newArray = [];
+    for (let i = 0; i < anArray.length; i++) {
+        if (members[i].party === letter) {
+            newArray.push(members[i]);
+        }
+    }
+    let numArray = 0;
+    for (let j = 0; j < newArray.length; j++) {
+        numArray += newArray[j].votes_with_party_pct;
+    }
+    let averageOfVotes = 0;
+    //if the array that contains the members of party is filled (meaning that there are at least one member) we calculate the average of votes.
+    if (newArray.length !== 0) {
+        averageOfVotes = (numArray / newArray.length);
+
+    } else {
+        averageOfVotes = 0;
+    }
+    return (averageOfVotes);
+}
+
+
+function populateObject(members) {
+    //we then update the sections by calling the functions needed.
+
+    statistics.democrats.number = countMembers(members, "D")
+    statistics.republicans.number = countMembers(members, "R")
+    statistics.independents.number = countMembers(members, "I")
+
+    statistics.democrats.average = getArray(members, "D")
+    statistics.republicans.average = getArray(members, "R")
+    statistics.independents.average = getArray(members, "I")
+
+
+    statistics.totals.number = statistics.democrats.number + statistics.republicans.number + statistics.independents.number;
+
+
+    let totalPercent = 0;
+    for (let i = 0; i < members.length; i++) {
+        totalPercent += members[i].votes_with_party_pct;
+    }
+    statistics.totals.average = totalPercent / members.length;
 
 }
 
@@ -214,4 +215,3 @@ function printTables(membersArray, tbodyId, criteria1, criteria2) {
 
     }
 }
-
